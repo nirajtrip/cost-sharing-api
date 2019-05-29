@@ -9,23 +9,28 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 @Entity
 @XmlRootElement
 @Cacheable(false)
+@ApiModel(description="All details about the MemberExpense.")
 public class MemberExpense {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int expenseId;
 
-
+    @ApiModelProperty(notes="ExpenseName should have atleast 2 characters")
 	private String expenseName;
 	private double amount;
 
 	private Date createdDate;
 	private String comments;
+    @ApiModelProperty(notes="MemberId")
 	private int memberId;
+    @ApiModelProperty(notes="CategoryId")
 	private int categoryId;
 
 

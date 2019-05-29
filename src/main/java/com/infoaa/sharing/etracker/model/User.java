@@ -12,11 +12,18 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 @Table(name = "users")
+@ApiModel(description="All details about the User. ")
 public class User {
+
 	private Long id;
+    @ApiModelProperty(notes="Name should have atleast 8 characters")
 	private String username;
+    @ApiModelProperty(notes="Password should have atleast 8 characters")
 	private String password;
 	private String passwordConfirm;
 	private Set<Role> roles;

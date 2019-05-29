@@ -1,4 +1,4 @@
-package com.infoaa.costsharingapi;
+package com.infoaa.sharing.main;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

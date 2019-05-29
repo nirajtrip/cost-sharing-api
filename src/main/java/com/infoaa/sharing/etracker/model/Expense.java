@@ -13,10 +13,13 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 @Entity
 @XmlRootElement
 @Cacheable(false)
+@ApiModel(description="All details about the Expense. ")
 public class Expense {
 
 	@Id
@@ -24,6 +27,7 @@ public class Expense {
 	private int expenseId;
 
 	@NotEmpty(message="Expense name cannot be empty")
+    @ApiModelProperty(notes="Expense Name should have atleast 2 characters")
 	private String expenseName;
 
 	@Min(1)
@@ -36,6 +40,7 @@ public class Expense {
 	private String comments;
 
 
+    @ApiModelProperty(notes="CetegoryId")
 	private int categoryId;
 
 	//private int imageId;

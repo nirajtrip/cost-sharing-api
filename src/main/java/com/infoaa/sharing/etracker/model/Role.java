@@ -3,10 +3,16 @@ package com.infoaa.sharing.etracker.model;
 import javax.persistence.*;
 import java.util.Set;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 @Table(name = "role")
+@ApiModel(description="All details about the Role.")
 public class Role {
+
     private Long id;
+    @ApiModelProperty(notes="Name should have atleast 2 characters")
     private String name;
     private Set<User> users;
 

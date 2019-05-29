@@ -6,13 +6,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 @Cacheable(false)
+@ApiModel(description="All details about the Category. ")
 public class Category {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int categoryId;
+    @ApiModelProperty(notes="Category should have atleast 2 characters")
 	private String category;
 
 	public Category() {

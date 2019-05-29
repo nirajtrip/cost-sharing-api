@@ -5,9 +5,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import io.swagger.annotations.ApiModel;
+
 @Entity
 @XmlRootElement
 @Table(name="FILE_UPLOAD")
+@ApiModel(description="Image upload to the Server.")
 public class UploadImage {
 
 	@Id
